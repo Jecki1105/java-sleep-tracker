@@ -21,8 +21,8 @@ public class SleeplessNights implements SleepMonitoring {
         Period period = Period.between(dateStart, dateFinish);
         int totalNightSessions = period.getDays() + 1;
 
-        Set<LocalDate> DatesOfNightSessions;
-        DatesOfNightSessions = sessions.stream()
+        Set<LocalDate> datesOfNightSessions;
+        datesOfNightSessions = sessions.stream()
                 .filter(this::isSleepWithinSameDay)
                 .map(session -> session.getTimeAsleep().toLocalDate())
                 .collect(Collectors.toSet());
@@ -30,10 +30,10 @@ public class SleeplessNights implements SleepMonitoring {
         sessions.stream()
                 .filter(session -> session.getTimeWakeUp().getHour() < 6)
                 .map(session -> session.getTimeWakeUp().toLocalDate())
-                .forEach(DatesOfNightSessions::add);
+                .forEach(datesOfNightSessions::add);
 
-        int AmountOfNightsWhenUsersSleep = totalNightSessions - DatesOfNightSessions.size();
-        return new SleepAnalysisResult(AmountOfNightsWhenUsersSleep, "Количество бессонных ночей: ");
+        int amountOfNightsWhenUsersSleep = totalNightSessions - datesOfNightSessions.size();
+        return new SleepAnalysisResult(amountOfNightsWhenUsersSleep, "Количество бессонных ночей: ");
     }
 
     public LocalDate findFirstNight(List<SleepingSession> sessions) {
