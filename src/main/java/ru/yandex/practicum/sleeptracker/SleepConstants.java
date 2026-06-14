@@ -4,11 +4,6 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 public class SleepConstants {
-
-    public static final String OWL = "Сова";
-    public static final String LARK = "Жаворонок";
-    public static final String PIGEON = "Голубь";
-
     public static final LocalTime OWL_ASLEEP_THRESHOLD = LocalTime.of(23, 0);
     public static final LocalTime OWL_WAKEUP_THRESHOLD = LocalTime.of(9, 0);
     public static final LocalTime LARK_ASLEEP_THRESHOLD = LocalTime.of(22, 0);

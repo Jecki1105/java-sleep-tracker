@@ -86,7 +86,7 @@ public class SleepTrackerAppTest {
     void testClassificationOfUsersWithCorrectList() {
         ClassificationOfUsers classification = new ClassificationOfUsers();
         SleepAnalysisResult result = classification.sleepAnalysis(sessionsList);
-        assertEquals("Голубь", result.getValue());
+        assertEquals(ChronotypeUsers.PIGEON, result.getValue());
         assertEquals("Пользователь относится к хронотипу: ", result.getDescription());
 
     }
@@ -95,7 +95,7 @@ public class SleepTrackerAppTest {
     void testClassificationOfUsersWithEmptyList() {
         ClassificationOfUsers classification = new ClassificationOfUsers();
         SleepAnalysisResult result = classification.sleepAnalysis(emptyList);
-        assertEquals("Голубь", result.getValue());
+        assertEquals(ChronotypeUsers.PIGEON, result.getValue());
     }
 
     @Test
